@@ -1,0 +1,31 @@
+.Button
+  display: inline-flex
+  margin-top: 45px
+  padding: 20px 150px
+  border-radius: 30px
+  max-width: 100%
+  border: 0
+  outline: 0
+  cursor: pointer
+  align-items: center
+  justify-content: center
+
+  color: #fff
+  text-transform: uppercase
+  font: 500 .94rem/1em 'Roboto', sans-serif
+
+  transform: scale(1)
+  transition-property: transform
+  transition-duration: .2s
+  transition-timing-function: linear
+  user-select: none
+
+  &:hover
+    transform: scale(1.01)
+
+  &:disabled
+    opacity: .5
+    cursor: default
+
+    &:hover
+      transform: scale(1)
