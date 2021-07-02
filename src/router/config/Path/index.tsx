@@ -1,3 +1,4 @@
 export const Paths: {[key: string]: string} = {
-  notFoundPath: '*'
+  notFoundPath: '*',
+  pokedexPath: '/'
 }
