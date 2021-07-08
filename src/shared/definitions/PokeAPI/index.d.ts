@@ -1,0 +1,1 @@
+export { IGetPokemonList } from './getPokemonList'

@@ -1,3 +1,64 @@
 .Pokedex
   width: 100%
-  height: 100vh
+
+  .P__Search
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: calc( 100vh - 140px )
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(32, 32, 32, 0.6) 0.01%), url(../../assets/wallpaper3.png)
+    background-repeat: no-repeat
+    background-size: 100% auto
+    background-position: center
+
+    .S__Text
+      color: #fff
+      text-align: center
+      font-family: 'Roboto', sans-serif
+      font-style: normal
+      font-weight: bold
+      font-size: 42px
+      line-height: 49px
+      margin-bottom: 50px
+
+    // .S__Search
+    //   display: flex
+
+    //   .S__Input
+    //     width: 300px
+    //     height: 50px
+    //     border-radius: 5px 0 0 20px
+    //     font-family: Roboto
+    //     font-style: normal
+    //     font-weight: normal
+    //     font-size: 24px
+    //     line-height: 28px
+    //     color: #858585
+    //     border: 0
+
+    //   .S__Btn_Search
+    //     width: 60px
+    //     height: 50px
+    //     border: 0
+    //     border-radius: 0 20px 5px 0
+    //     background: #fe3d00
+    //     cursor: pointer
+    //     color: #fff
+
+    //     &:hover
+    //       background: #fd5c2b
+
+  .P__Body
+    width: 100%
+    height: 600px
+    display: flex
+
+    .B__Pokelist
+      width: 40%
+      height: 100%
+
+    .B__Pokedetails
+      width: 60%
+      height: 100%

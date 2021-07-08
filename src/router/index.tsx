@@ -12,9 +12,9 @@ export const Router: FC = (): ReactElement => {
   return (
     <BrowserRouter>
       <ToastContainer />
-        <Switch>
-          {RouteComponents}
-        </Switch>
+      <Switch>
+        {RouteComponents}
+      </Switch>
     </BrowserRouter>
   )
 }

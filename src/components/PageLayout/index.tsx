@@ -1,6 +1,8 @@
 import { FC, ReactElement } from 'react'
 
 import logo from 'assets/logo.png'
+import teamIcon from 'assets/team-icon.png'
+import pokedexIcon from 'assets/pokedex-icon.png'
 
 import css from './PageLayout.module.sass'
 
@@ -13,12 +15,14 @@ export const PageLayout: FC = ({ children }): ReactElement => {
         </a>
 
         <div className={css.H__Buttons}>
-          <button className={css.H__Button}>Team</button>
-          <button className={css.H__Button}>Pokedex</button>
+          <button className={css.H__Button}>Team <img src={teamIcon} className={css.B__Icon} /></button>
+          <button className={css.H__Button}>Pokedex <img src={pokedexIcon} className={css.B__Icon} /></button>
         </div>
       </header>
 
-      {children}
+      <div className={css.Children}>
+        {children}
+      </div>
     </>
   )
 }

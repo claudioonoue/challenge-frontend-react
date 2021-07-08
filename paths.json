@@ -7,9 +7,11 @@
       "@pages/*": [ "pages/*" ],
       "@router/*": [ "router/*" ],
       "@services/*": [ "services/*" ],
+      "@providers/*": [ "providers/*" ],
       "@shared/*": [ "shared/*" ],
       "@definitions/*": [ "shared/definitions/*" ],
-      "@helpers/*": [ "shared/helpers/*" ]
+      "@helpers/*": [ "shared/helpers/*" ],
+      "@errors/*": [ "shared/errors/*" ]
     }
   }
 }

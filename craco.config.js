@@ -8,9 +8,11 @@ module.exports = {
       '@pages': path.resolve(__dirname, 'src/pages/'),
       '@router': path.resolve(__dirname, 'src/router/'),
       '@services': path.resolve(__dirname, 'src/services/'),
+      '@providers': path.resolve(__dirname, 'src/providers/'),
       '@shared': path.resolve(__dirname, 'src/shared/'),
       '@definitions': path.resolve(__dirname, 'src/shared/definitions/'),
-      '@helpers': path.resolve(__dirname, 'src/shared/helpers/')
+      '@helpers': path.resolve(__dirname, 'src/shared/helpers/'),
+      '@errors': path.resolve(__dirname, 'src/shared/errors/')
     }
   }
 }
