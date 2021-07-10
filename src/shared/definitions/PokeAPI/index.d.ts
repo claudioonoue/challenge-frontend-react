@@ -1,1 +1,1 @@
-export { IGetPokemonList } from './getPokemonList'
+export { IGetPokemonList, IResult } from './getPokemonList'

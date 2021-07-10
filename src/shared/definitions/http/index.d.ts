@@ -1,4 +1,1 @@
-export interface HTTPQueryParams {
-  limit: number
-  offset: number
-}
+export { HTTPQueryParams } from './http'

@@ -1,4 +1,7 @@
-import { HttpStatusCodes, HttpGetClient } from '@providers/http/protocols'
+import { HttpGetClient } from '@providers/http/protocols'
+import { HttpStatusCodes } from '@providers/http/protocols/http-status-codes'
+// import { HttpGetClient } from '@providers/http/protocols/http-get-client'
+// import { HttpStatusCodes } from '@providers/http/protocols/http-status-codes'
 import { HTTPQueryParams } from '@shared/definitions/http'
 import { DefaultError } from '@errors/DefaultError'
 import { ErrorTypes } from '@errors/ErrorTypes'
@@ -14,7 +17,7 @@ export class PokeAPIService implements GetPokemonList {
 
   public async getPokemonList(QueryParams: HTTPQueryParams): Promise<IGetPokemonList> {
     const response = await this.request.get<IGetPokemonList>({
-      url: 'https://pokeapi.co/api/v2/pokemo',
+      url: 'https://pokeapi.co/api/v2/pokemon',
       query: QueryParams
     })
 
