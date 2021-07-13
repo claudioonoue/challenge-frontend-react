@@ -48,12 +48,19 @@ export const Pagination: React.FC<IPaginationProps> = ({
 
   const generatePageButtons = (pages: number): ReactElement[] => {
     var buttons: ReactElement[] = []
-    var startPage = activePage > maxButtonsAround ? activePage - maxButtonsAround : 1
-    var totalButtons = startPage === 1 ? startPage + (maxButtonsAround * 2) : activePage + maxButtonsAround
-    for (let index = startPage; index <= totalButtons; index++) {
+    var maxButtons = 1 + (maxButtonsAround * 2)
+    var startPage =
+      activePage > maxButtonsAround && maxButtons < pages
+        ? activePage - maxButtonsAround
+        : 1
+    var totalButtons =
+    startPage === 1
+      ? maxButtons
+      : activePage + maxButtonsAround
+    for (let index = startPage; index <= (totalButtons >= pages ? pages : totalButtons); index++) {
       buttons.push(
         <button
-          className={`${css.P__Page_Buttons} ${index === activePage ? css.P__Page_Buttons_Active : ''}`}
+          className={`${css.CP__Page_Buttons} ${index === activePage ? css.CP__Page_Buttons_Active : ''}`}
           onClick={() => onClickPageButton(index)}
         >
           {index}
@@ -71,23 +78,25 @@ export const Pagination: React.FC<IPaginationProps> = ({
 
   return (
     <div className={css.Pagination}>
-      <button
-        className={css.P__Prev_Button}
-        onClick={prevPage}
-      >
-        <FontAwesomeIcon icon={faArrowLeft} size='lg' />
-      </button>
+      <div className={css.P__Control_Page}>
+        <button
+          className={css.CP__Prev_Button}
+          onClick={prevPage}
+        >
+          <FontAwesomeIcon icon={faArrowLeft} size='lg' />
+        </button>
 
-      {
-        paginationButtons.map((button) => button)
-      }
+        {
+          paginationButtons.map((button) => button)
+        }
 
-      <button
-        className={css.P__Next_Button}
-        onClick={nextPage}
-      >
-        <FontAwesomeIcon icon={faArrowRight} size='lg' />
-      </button>
+        <button
+          className={css.CP__Next_Button}
+          onClick={nextPage}
+        >
+          <FontAwesomeIcon icon={faArrowRight} size='lg' />
+        </button>
+      </div>
     </div>
   )
 }
