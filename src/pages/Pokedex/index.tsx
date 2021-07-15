@@ -1,6 +1,4 @@
 import { ReactElement, useState, useEffect } from 'react'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 import { List, Show } from './components'
 
@@ -54,12 +52,6 @@ export const Pokedex: React.FC = (): ReactElement => {
         <div className={css.S__Text}>
           Find all the most different pocket monsters <br />in the Pokemon world!
         </div>
-        {/* <div className={css.S__Search}>
-          <input type="text" placeholder="Find a Pokemon BY ID..." className={css.S__Input} />
-          <button className={css.S__Btn_Search}>
-            <FontAwesomeIcon icon={faSearch} />
-          </button>
-        </div> */}
       </div>
 
       <div className={css.P__Body}>

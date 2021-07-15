@@ -1,0 +1,1 @@
+export const POKE_FAVORITES = 'POKE_FAVORITES'

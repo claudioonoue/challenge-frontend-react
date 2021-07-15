@@ -1,9 +1,10 @@
 import { ReactElement, useState, useEffect } from 'react'
 
 import { firstLetterUpperCase } from '@shared/helpers/strings'
-
 import { IGetPokemon, IGetPokemonSpecies } from '@shared/definitions/PokeAPI'
+
 import { makePokeAPIService } from '@services/PokeAPI'
+import { setPokeFavorites, getPokeFavorites } from '@services/LocalStorage/PokeFavorites'
 
 import { PokemonLogoType } from './components'
 
@@ -16,6 +17,7 @@ const PokeAPIService = makePokeAPIService()
 export const Show: React.FC = (): ReactElement => {
   const [pokemon, setPokemon] = useState<IGetPokemon | undefined>()
   const [species, setSpecies] = useState<IGetPokemonSpecies | undefined>()
+  const [pokeFavorite, setPokeFavorite] = useState<boolean>(false)
 
   useEffect(() => {
     if (pokemon) {
@@ -26,6 +28,7 @@ export const Show: React.FC = (): ReactElement => {
         .catch((error) => {
           console.log(error)
         })
+      setPokeFavorite(isFavorite(pokemon.id))
     }
   }, [pokemon])
 
@@ -38,6 +41,11 @@ export const Show: React.FC = (): ReactElement => {
         console.log(error)
       })
   }, [])
+
+  const isFavorite = (id: number): boolean => {
+    const favorites = getPokeFavorites().find((item) => item.id === id)
+    return !!favorites
+  }
 
   return (
     <div className={css.Show}>
@@ -74,7 +82,26 @@ export const Show: React.FC = (): ReactElement => {
           {species ? species.flavor_text_entries[0].flavor_text : ''}
         </div>
         <div className={css.PD__Pokemon_Favorite}>
-          <div className={css.PF__Button}>
+          <div
+            className={
+              pokeFavorite
+                ? css.PF__Button_Active
+                : css.PF__Button
+            }
+            onClick={() => {
+              if (!pokemon) {
+                return
+              }
+              const favorites = getPokeFavorites()
+              if (isFavorite(pokemon ? pokemon.id : 0)) {
+                favorites.splice(favorites.findIndex((item) => item.id === pokemon.id), 1)
+              } else {
+                favorites.push({ id: pokemon.id })
+              }
+              setPokeFavorites(favorites)
+              setPokeFavorite(!pokeFavorite)
+            }}
+          >
           </div>
         </div>
       </div>
