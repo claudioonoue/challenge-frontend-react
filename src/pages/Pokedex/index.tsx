@@ -2,7 +2,7 @@ import { ReactElement, useState, useEffect } from 'react'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
-import { List } from './components'
+import { List, Show } from './components'
 
 import { setLocalStorage, getLocalStorage } from '@shared/helpers/localStorage'
 
@@ -35,7 +35,7 @@ export const Pokedex: React.FC = (): ReactElement => {
     const data = getPokemonLocalStorage()
     if (!data) {
       PokeAPIService.getPokemonList({
-        limit: 2000,
+        limit: 150,
         offset: 0
       })
         .then((r) => {
@@ -67,7 +67,7 @@ export const Pokedex: React.FC = (): ReactElement => {
           <List data={getPokemonLocalStorage()} />
         </div>
         <div className={css.B__Pokedetails}>
-
+          <Show />
         </div>
       </div>
     </div>

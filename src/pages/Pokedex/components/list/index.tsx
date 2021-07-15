@@ -54,7 +54,7 @@ export const List: React.FC<IListProps> = ({
         filtered.length === 0
           ? localData.results.slice(offset, page * 10)
           : filtered.slice(offset, page * 10))
-      setCount(filtered.length === 0 ? localData.count : filtered.length)
+      setCount(filtered.length === 0 ? localData.results.length : filtered.length)
     }
   }, [page, search, localData])
 

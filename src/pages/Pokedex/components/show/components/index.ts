@@ -1,0 +1,1 @@
+export { PokemonLogoType } from './pokemonLogoType'

@@ -1,0 +1,113 @@
+.Show
+  width: 70%
+  height: 527px
+  border-style: solid
+  border-width: 5px 3px
+  border-color: #FF3D00
+  border-radius: 0 15px 15px 0
+  background-color: #202020
+  display: flex
+  flex-direction: column
+
+  .S__Pokemon_resume
+    width: 100%
+    height: 50%
+    display: grid
+    grid-template-columns: 1fr 2fr
+    grid-template-rows: 1fr 2fr
+    grid-template-areas: "PokemonImg PokemonName" "PokemonImg PokemonTypes"
+
+    .PR__PokemonImg
+      grid-area: PokemonImg
+      display: flex
+      align-items: center
+      justify-content: center
+
+      .PI__Img
+        width: 175px
+        border-style: solid
+        border-width: 2px
+        border-color: #FF3D00
+        border-radius: 15px
+        background-color: #5e5a5a
+
+    .PR__PokemonName
+      grid-area: PokemonName
+      display: flex
+      align-items: center
+      justify-content: center
+      font-style: normal
+      font-weight: bold
+      font-size: 35px
+      color: #fff
+
+    .PR__PokemonTypes
+      grid-area: PokemonTypes
+      display: flex
+      align-items: center
+      justify-content: center
+
+  .S__Pokemon_details
+    width: 100%
+    height: 50%
+    display: flex
+    flex-direction: column
+
+    .PD__Pokemon_Description
+      width: 80%
+      height: 60%
+      padding: 5px
+      align-self: center
+      display: flex
+      align-items: center
+      justify-content: center
+      font-style: normal
+      font-weight: bold
+      font-size: 25px
+      line-height: 30px
+      color: #fff
+      text-align: justify
+      border-style: solid
+      border-width: 2px
+      border-color: #FF3D00
+      border-radius: 15px
+      background-color: #5e5a5a
+
+    .PD__Pokemon_Favorite
+      width: 100%
+      height: 40%
+      display: flex
+      align-items: center
+      justify-content: center
+
+      .PF__Button
+        width: 80px
+        height: 80px
+        background-image: url("../../../../assets/pokeball_unfavorite.png")
+        background-position: center
+        background-size: contain
+        transition: 200ms all
+        box-shadow: 0 0 20px #fff
+        border-radius: 50px
+
+        &:hover
+          background-image: url("../../../../assets/pokeball_favorite.png")
+          transform: scale(1.1)
+          cursor: pointer
+          box-shadow: 0 0 20px #4454e4
+
+      .PF__Button_Active
+        width: 80px
+        height: 80px
+        background-image: url("../../../../assets/pokeball_favorite.png")
+        background-position: center
+        background-size: contain
+        transition: 200ms all
+        box-shadow: 0 0 20px #4454e4
+        border-radius: 50px
+
+        &:hover
+          background-image: url("../../../../assets/pokeball_unfavorite.png")
+          transform: scale(0.9)
+          cursor: pointer
+          box-shadow: 0 0 20px #fff
